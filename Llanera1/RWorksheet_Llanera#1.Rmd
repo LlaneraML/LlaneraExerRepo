@@ -157,7 +157,7 @@ print(paste("My name is",name, "and I am",age ,"years old."))
 print(R.version.string)
 ```
 the output is "My name is Marco Luis Llanera and I am 19 years old."
-
+"R version 4.4.1 (2024-06-14)"
 
 ## Including Plots
 
