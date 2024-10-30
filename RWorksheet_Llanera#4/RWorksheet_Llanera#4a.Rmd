@@ -72,7 +72,17 @@ print(new_order_data)
 plot(data$ShoeSize, data$Height, main="Shoe Size vs Height", xlab="Shoe Size", ylab="Height")
 ```
 
+5. 
+```{r}
+#a
+data <- read.table("import_march.csv", header = TRUE, sep = ",")
+```
 
+6. 
+```{r}
+#b
+data
+```
 
 ## Including Plots
 
