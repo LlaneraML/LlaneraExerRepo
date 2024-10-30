@@ -1,0 +1,167 @@
+---
+title: "RWorksheet_Llanera#3"
+author: "LlaneraExerRepo"
+date: "2024-10-02"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+1. 
+```{r}
+LETTERS
+```
+```{r}
+letters <-c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s","t", "u", "v", "w", "x", "y", "z")
+```
+
+a. 
+```{r}
+first_letterss <- LETTERS[1:11]
+first_letterss
+```
+
+b.
+```{r}
+odd_letterss <- LETTERS[seq(1, length(LETTERS), by = 2)]
+odd_letterss
+```
+c. 
+```{r}
+vowelss <- LETTERS[c(1, 5, 9, 15, 21)]  
+vowelss
+```
+d. 
+```{r}
+last_lowercase <- letters[22:26]
+last_lowercase
+```
+d. 
+```{r}
+letters_15_24 <- letters[15:24]
+letters_15_24
+```
+2. 
+a. 
+```{r}
+city <- c("Tuguegarao City", "Manila", "Iloilo City", "Tacloban", "Samal Island", "Davao City")
+city
+```
+b. 
+```{r}
+temp <- c(42, 39, 34, 34, 30, 27)
+temp
+```
+
+c.
+```{r}
+data <- data.frame(City = city, Temperature = temp)
+data
+```
+d. 
+```{r}
+names(data) <- c("City", "Temperature")
+data
+```
+e. 
+```{r}
+str(data)
+```
+f. 
+```{r}
+data[3:4, ]
+```
+g. 
+```{r}
+highest_temp_city <- data[which.max(data$Temperature), ]
+lowest_temp_city <- data[which.min(data$Temperature), ]
+
+highest_temp_city
+lowest_temp_city
+```
+3. 
+a. 
+```{r}
+matrix_data <- matrix(c(1:8, 11:14), nrow = 3, ncol = 4)
+matrix_data
+```
+b. 
+```{r}
+matrix_multiplied <- matrix_data * 2
+matrix_multiplied
+```
+
+c. 
+```{r}
+row_2 <- matrix_data[2, ]
+row_2
+```
+d. 
+```{r}
+columns_3_4_row_1_2 <- matrix_data[1:2, 3:4]
+columns_3_4_row_1_2
+```
+e.
+```{r}
+row_3_columns_2_3 <- matrix_data[3, 2:3]
+row_3_columns_2_3
+```
+f. 
+```{r}
+column_4 <- matrix_data[, 4]
+column_4
+```
+g. 
+```{r}
+rownames(matrix_multiplied) <- c("one", "two", "Three")
+colnames(matrix_multiplied) <- c("ONE", "TWO", "THREE", "FOUR")
+matrix_multiplied
+```
+h. 
+```{r}
+reshaped_matrix <- matrix(matrix_data, nrow = 6, ncol = 2)
+reshaped_matrix
+```
+4. 
+a. 
+## R Markdown
+```{r}
+values <-c(1, 2, 3, 6, 7, 8, 9, 0, 3, 4, 5, 1)
+values_repeated <-rep(values, times = 2)
+array_3d <-array(values_repeated, dim =c(2, 4, 3))
+array_3d
+```
+b. 
+-The array has 3 dimensions
+
+c.
+```{r}
+dimnames(array_3d) <-list(c("a", "b"),c("A", "B", "C", "D"),c("1st-Dimensional Array", "2nd-Dimensional Array", "3rd-Dimensional Array")) 
+array_3d
+```
+
+
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
