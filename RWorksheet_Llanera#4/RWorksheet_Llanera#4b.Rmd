@@ -1,0 +1,78 @@
+---
+title: "RWorksheet_LLANERA#4b"
+author: "LlaneraExerRepo"
+date: "2024-12-16"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+1. Using the for loop, create an R script that will display a 5x5 matrix as shown in
+Figure 1. It must contain vectorA = [1,2,3,4,5] and a 5 x 5 zero matrix.
+Hint Use abs() function to get the absolute value
+
+2. Print the string "*" using for() function. The output should be the same as shown
+in Figure
+```{r}
+
+vectorA <- c(1, 2, 3, 4, 5)
+
+
+matrix <- matrix(0, nrow = 5, ncol = 5)
+
+
+for (i in 1:5) {
+  for (j in 1:5) {
+    matrix[i, j] <- abs(i - j)
+    cat(matrix[i, j], " ")
+  }
+  cat("\n")
+}
+
+
+for (i in 1:5) {
+  for (j in 1:i) {
+    cat("*")
+  }
+  cat("\n")
+}
+
+```
+3. Get an input from the user to print the Fibonacci sequence starting from the 1st input up to 500. Use repeat and break statements. Write the R Scripts and its output.
+```{r}
+
+start_number <- readline(prompt = "Enter the starting number: ")
+
+
+start_number <- as.numeric(start_number)
+
+
+fib_1 <- 0
+fib_2 <- 1
+
+
+print(fib_1)
+
+
+repeat {
+
+  fib_next <- fib_1 + fib_2
+  
+
+  print(fib_next)
+
+  fib_1 <- fib_2
+  fib_2 <- fib_next
+
+
+  if (fib_next > 500) {
+    break
+  }
+}
+```
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
